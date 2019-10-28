@@ -6,11 +6,11 @@
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post .author.image_file) }}">
           <div class="media-body">
             <div class="article-metadata">
-                <a class="text-muted">Pitched By: </a><a href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }} </a>
+                <a class="text-muted">Author: </a><a href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }} </a>
             </div>
             <h2><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
-              <small class="text-muted">Pitched on: </small><small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+              <small class="text-muted">Posted on: </small><small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
           </div>
         </article>
     {% endfor %}

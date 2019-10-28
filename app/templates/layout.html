@@ -10,9 +10,9 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     {% if title %}
-        <title>Code Crunch - {{ title }}</title>
+        <title>Blogger - {{ title }}</title>
     {% else %}
-        <title>Code Crunch</title>
+        <title>Blogger</title>
     {% endif %}
 </head>
 <body>
@@ -20,7 +20,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-sm navbar-dark bg-steel fixed-top" style="background-color: grey">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/" style="color: orange; font-weight: bold; font-size: 30px">Code Crunch</a>
+          <a class="navbar-brand mr-4" href="/" style="color:orange; font-weight: bold; font-size: 30px">Blogger</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,7 +31,7 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
                 {% if current_user.is_authenticated%}
-                  <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}" style="font-weight: bold">Submit Article</a>
+                  <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}" style="font-weight: bold">Submit Post</a>
                   <a class="nav-item nav-link" href="{{ url_for('users.account') }}" style="font-weight: bold">Account</a>
                   <a class="nav-item nav-link" href="{{ url_for('users.logout') }}" style="font-weight: bold">Logout</a>
                 {% else %}
@@ -57,22 +57,44 @@
           {% endwith %}
           {% block content %}{% endblock %}
         </div>
-          <div class="col-md-4">
-          <div class="content-section" style="background-color: rgb(224, 192, 131)">
-
-              </ul>
-          </div>
-          </div>
         <div class="col-md-4">
-          <div class="content-section" style="background-color: rgb(224, 192, 131)">
-            <h3 style="color: black; font-weight: bold; text-align: center" >Article Categories</h3>
+          <div class="content-section" style="background-color: rgb(146, 253, 173)">
+
+              <!-- Begin Mailchimp Signup Form -->
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:300px;}
+                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+            </style>
+            <div id="mc_embed_signup">
+              <form action="https://reltic.us18.list-manage.com/subscribe/post?u=86798d3a8798975fde35e7c1d&amp;id=36ad82c391" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <h2>Subscribe</h2>
+                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+               <div class="mc-field-group">
+                 <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+                </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_86798d3a8798975fde35e7c1d_36ad82c391" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+             </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[6]='MMERGE6';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
+              <br>
+              <br>
+            <h3 style="color: black; font-weight: bold; text-align: center" >Post Categories</h3>
               <ul class="list-group">
-                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: orange">Business</li>
-                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: orange">FinTech</li>
-                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: orange">Robotics</li>
-                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: orange">Big Data</li>
-                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: orange">Bio Tech</li>
-                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: orange">Nano Tech</li>
+                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: grey">Python</li>
+                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: grey">JavaScript</li>
+                <a href="#"><li class="list-group-item list-group-item-light" style="text-align: center; font-weight:bold; color: grey">Django</li>
               </ul>
           </div>
           </div>
