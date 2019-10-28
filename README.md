@@ -11,7 +11,7 @@ A personal blogging website where you can create and share your opinions and oth
 ## Project Description
 A Flask application for a personal blogging website where you can create and share your opinions and other users can read and comment on them.
 ## Screenshot
-![image](.)
+![image](https://github.com/AliKheirAbdi/blogger/blob/master/screen.png)
 
 ## Set up instructions
 1. You need to have python3.7 installed, venv and pip
